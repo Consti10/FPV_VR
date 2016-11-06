@@ -1,0 +1,1187 @@
+Applications Graphics Acceleration Info:
+Uptime: 53717492 Realtime: 63237248
+
+** Graphics info for pid 1214 [com.huawei.android.launcher] **
+
+Recent DisplayList operations
+        DrawRenderNode
+          Save
+          Translate
+          DrawBitmap
+          RestoreToCount
+          Save
+          Translate
+          DrawBitmap
+          RestoreToCount
+          Save
+          Translate
+          DrawBitmap
+          RestoreToCount
+          Save
+          Translate
+          DrawBitmap
+          RestoreToCount
+          Save
+          Translate
+          DrawBitmap
+          RestoreToCount
+          Save
+          Translate
+          DrawBitmap
+          RestoreToCount
+          Save
+          Translate
+          DrawBitmap
+          RestoreToCount
+        DrawRenderNode
+RestoreToCount
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+multiDraw
+  DrawBitmap
+DrawBitmap
+multiDraw
+  DrawText
+DrawLayer
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache          5311468 / 50331648
+  LayerCache            6684672 / 16777216 (numLayers = 1)
+    Layer size 1088x1536; isTextureLayer()=0; texid=51 fbo=0; refs=1
+    Layer size 1088x256; isTextureLayer()=0; texid=34 fbo=1; refs=1
+  Layers total    7798784 (numLayers = 2)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TessellationCache           0 /  1048576
+  TextDropShadowCache    688256 /  2097152
+  PatchCache               2944 /   131072
+  FontRenderer 0 A8     1048576 /  1048576
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total  1048576 /  1048576
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  14850028 bytes, 14.16 MB
+
+Profile data in ms:
+
+	com.huawei.android.launcher/com.huawei.android.launcher.Launcher/android.view.ViewRootImpl@345659d3 (visibility=0)
+View hierarchy:
+
+  com.huawei.android.launcher/com.huawei.android.launcher.Launcher/android.view.ViewRootImpl@345659d3
+  232 views, 314,59 kB of display lists
+
+
+Total ViewRootImpl: 1
+Total Views:        232
+Total DisplayList:  314,59 kB
+
+
+** Graphics info for pid 1015 [com.android.inputmethod.latin] **
+
+Recent DisplayList operations
+      DrawRenderNode
+        DrawRenderNode
+RestoreToCount
+DrawPatch
+DrawPatch
+DrawPatch
+DrawPatch
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+multiDraw
+  DrawText
+multiDraw
+  DrawText
+DrawText
+DrawText
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawShadow
+DrawLayer
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache           894012 / 50331648
+  LayerCache                  0 / 16777216 (numLayers = 0)
+  Layers total          0 (numLayers = 0)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TessellationCache           0 /  1048576
+  TextDropShadowCache         0 /  2097152
+  PatchCache              14144 /   131072
+  FontRenderer 0 A8     2097152 /  2097152
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total  2097152 /  2097152
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  3005308 bytes, 2.87 MB
+
+Profile data in ms:
+
+	InputMethod/android.view.ViewRootImpl@2403d477 (visibility=8)
+View hierarchy:
+
+  InputMethod/android.view.ViewRootImpl@2403d477
+  10 views, 7,97 kB of display lists
+
+
+Total ViewRootImpl: 1
+Total Views:        10
+Total DisplayList:  7,97 kB
+
+
+** Graphics info for pid 10729 [com.android.chrome:privileged_process0] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 6322 [com.android.vending] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 1764 [com.google.android.gms.persistent] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 11461 [com.android.email] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 11166 [com.android.settings] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 4365 [com.google.android.gms] **
+
+Recent DisplayList operations
+DrawOval
+DrawOval
+DrawArc
+DrawBitmap
+DrawPath
+Save
+DrawRenderNode
+  Save
+  DrawRenderNode
+    DrawRenderNode
+      DrawRenderNode
+        DrawPatch
+      Save
+      ClipRect
+      DrawRenderNode
+      DrawRenderNode
+      RestoreToCount
+  RestoreToCount
+RestoreToCount
+DrawPatch
+Save
+DrawRenderNode
+  Save
+  DrawRenderNode
+    DrawRenderNode
+      DrawRenderNode
+        DrawPatch
+      Save
+      ClipRect
+      DrawRenderNode
+      DrawRenderNode
+      RestoreToCount
+  RestoreToCount
+RestoreToCount
+DrawPatch
+Save
+DrawRenderNode
+  Save
+  DrawRenderNode
+    DrawRenderNode
+      DrawRenderNode
+        DrawPatch
+      Save
+      ClipRect
+      DrawRenderNode
+      DrawRenderNode
+      RestoreToCount
+  RestoreToCount
+RestoreToCount
+DrawPatch
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache                0 / 50331648
+  LayerCache                  0 / 16777216 (numLayers = 0)
+  Layers total          0 (numLayers = 0)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TessellationCache           0 /  1048576
+  TextDropShadowCache         0 /  2097152
+  PatchCache                  0 /   131072
+  FontRenderer 0 A8           0 /        0
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total        0 /        0
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  0 bytes, 0.00 MB
+
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 11525 [com.google.android.apps.plus] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 10076 [com.google.process.gapps] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 9762 [android.process.acore] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 26145 [android.process.media] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 11502 [com.android.exchange] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 10004 [com.huawei.motionservice] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 10014 [com.huawei.android.totemweather] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 10646 [com.android.chrome] **
+
+Recent DisplayList operations
+  DrawRenderNode
+    Save
+    ClipRect
+    DrawRenderNode
+      DrawRenderNode
+        DrawRenderNode
+          DrawRenderNode
+            DrawRenderNode
+              DrawRenderNode
+                DrawColor
+          DrawRenderNode
+            DrawRenderNode
+              DrawRenderNode
+                DrawRect
+                DrawRenderNode
+                DrawRenderNode
+                  DrawRenderNode
+                    DrawRenderNode
+                    Save
+                    ConcatMatrix
+                    Save
+                    DrawBitmap
+                    RestoreToCount
+                  DrawRenderNode
+                    Save
+                    ConcatMatrix
+                    Save
+                    DrawBitmap
+                    RestoreToCount
+                  DrawRenderNode
+                  Save
+                  ClipRect
+                  Translate
+                  RestoreToCount
+                  Save
+                  Translate
+                  Save
+                  Translate
+                  Save
+                  DrawBitmap
+                  RestoreToCount
+          DrawRenderNode
+        DrawRenderNode
+    RestoreToCount
+RestoreToCount
+DrawColor
+DrawRect
+DrawBitmap
+DrawBitmap
+DrawBitmap
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache                0 / 50331648
+  LayerCache                  0 / 16777216 (numLayers = 0)
+  Layers total          0 (numLayers = 0)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TessellationCache           0 /  1048576
+  TextDropShadowCache         0 /  2097152
+  PatchCache                  0 /   131072
+  FontRenderer 0 A8           0 /        0
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total        0 /        0
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  0 bytes, 0.00 MB
+
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 10043 [com.google.android.googlequicksearchbox:search] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 11133 [com.huawei.android.FloatTasks] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 10882 [org.mozilla.firefox] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 10833 [com.android.providers.partnerbookmarks] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 10794 [com.google.android.partnersetup] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 9422 [com.huawei.hidisk] **
+
+Recent DisplayList operations
+            DrawBitmap
+            RestoreToCount
+            Save
+            ClipRect
+            Translate
+            DrawText
+            RestoreToCount
+          DrawRenderNode
+            Save
+            Translate
+            Save
+            DrawBitmap
+            RestoreToCount
+            Save
+            ClipRect
+            Translate
+            DrawText
+            RestoreToCount
+    RestoreToCount
+RestoreToCount
+DrawPatch
+DrawPatch
+multiDraw
+  DrawPatch
+DrawBitmapRect
+DrawBitmap
+DrawBitmap
+multiDraw
+  DrawBitmap
+multiDraw
+  DrawBitmap
+multiDraw
+  DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+multiDraw
+  DrawText
+multiDraw
+  DrawText
+multiDraw
+  DrawText
+DrawPatch
+DrawPatch
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+multiDraw
+  DrawText
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache                0 / 50331648
+  LayerCache                  0 / 16777216 (numLayers = 0)
+  Layers total          0 (numLayers = 0)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TessellationCache           0 /  1048576
+  TextDropShadowCache         0 /  2097152
+  PatchCache                  0 /   131072
+  FontRenderer 0 A8           0 /        0
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total        0 /        0
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  0 bytes, 0.00 MB
+
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 9341 [constantin.android.notepad] **
+
+Recent DisplayList operations
+        DrawRenderNode
+          DrawPatch
+        DrawRenderNode
+          DrawRenderNode
+            Translate
+            Save
+            Translate
+            Save
+            DrawBitmap
+            RestoreToCount
+            Save
+            ClipRect
+            Translate
+            DrawText
+            RestoreToCount
+          DrawRenderNode
+            Save
+            Translate
+            Save
+            DrawBitmap
+            RestoreToCount
+            Save
+            ClipRect
+            Translate
+            DrawText
+            RestoreToCount
+    RestoreToCount
+RestoreToCount
+DrawPatch
+DrawBitmapRect
+DrawRect
+DrawPatch
+DrawPatch
+multiDraw
+  DrawPatch
+multiDraw
+  DrawPatch
+DrawPatch
+DrawPatch
+DrawText
+multiDraw
+  DrawText
+multiDraw
+  DrawText
+DrawText
+multiDraw
+  DrawText
+DrawBitmap
+DrawBitmap
+DrawBitmap
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache                0 / 50331648
+  LayerCache                  0 / 16777216 (numLayers = 0)
+  Layers total          0 (numLayers = 0)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TessellationCache           0 /  1048576
+  TextDropShadowCache         0 /  2097152
+  PatchCache                  0 /   131072
+  FontRenderer 0 A8           0 /        0
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total        0 /        0
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  0 bytes, 0.00 MB
+
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 9731 [com.huawei.android.pushagent.PushService] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 9709 [com.huawei.bd] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 1565 [com.android.contacts:cacheservice] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 20726 [com.whatsapp] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 847 [com.huawei.systemmanager:service] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 21505 [org.simalliance.openmobileapi.service:remote] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 6150 [com.huawei.trustagent] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 1505 [com.android.smspush] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 1280 [com.android.nfc:handover] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 1179 [com.android.phone] **
+
+Recent DisplayList operations
+                  DrawRenderNode
+                    DrawRenderNode
+                      Save
+                      ClipRect
+                      DrawText
+                      RestoreToCount
+                  RestoreToCount
+                DrawRenderNode
+                  Save
+                  ClipRect
+                  DrawRenderNode
+                    DrawRenderNode
+                      Save
+                      ClipRect
+                      DrawText
+                      RestoreToCount
+                  DrawRenderNode
+                    DrawRenderNode
+                      Save
+                      ClipRect
+                      DrawText
+                      RestoreToCount
+                  RestoreToCount
+                DrawPatch
+      DrawRenderNode
+        DrawRenderNode
+        DrawRenderNode
+          DrawRenderNode
+            DrawRenderNode
+              DrawRenderNode
+                Save
+                ClipRect
+                DrawRenderNode
+                  Save
+                  ClipRect
+                  DrawText
+                  RestoreToCount
+                RestoreToCount
+    RestoreToCount
+RestoreToCount
+DrawPatch
+multiDraw
+  DrawPatch
+DrawPatch
+DrawBitmapRect
+multiDraw
+  DrawText
+multiDraw
+  DrawText
+DrawText
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache                0 / 50331648
+  LayerCache                  0 / 16777216 (numLayers = 0)
+  Layers total          0 (numLayers = 0)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TessellationCache           0 /  1048576
+  TextDropShadowCache         0 /  2097152
+  PatchCache              17344 /   131072
+  FontRenderer 0 A8     1048576 /  1048576
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total  1048576 /  1048576
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  1065920 bytes, 1.02 MB
+
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 1162 [com.futurewei.ecens.mocalite] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 1137 [com.huawei.powergenie] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 1117 [com.android.keyguard] **
+
+Recent DisplayList operations
+                      RestoreToCount
+                DrawRenderNode
+                  DrawRenderNode
+                    Save
+                    ClipRect
+                    DrawText
+                    RestoreToCount
+            RestoreToCount
+            DrawRect
+            RestoreToCount
+          RestoreToCount
+      DrawRenderNode
+        DrawRenderNode
+    DrawRenderNode
+      DrawRenderNode
+        Save
+        ClipRect
+        DrawRenderNode
+          Save
+          DrawBitmap
+          RestoreToCount
+        RestoreToCount
+    DrawRenderNode
+      DrawRenderNode
+      DrawRenderNode
+        DrawRenderNode
+          Translate
+          DrawPatch
+        DrawRenderNode
+          DrawRenderNode
+            DrawRenderNode
+              Save
+              DrawBitmap
+              RestoreToCount
+          DrawRenderNode
+        DrawRenderNode
+  DrawRenderNode
+    ClipRect
+    Save
+    DrawBitmap
+    RestoreToCount
+RestoreToCount
+DrawColor
+DrawBitmap
+DrawRect
+DrawText
+DrawText
+DrawRect
+DrawBitmap
+DrawBitmap
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache         13080020 / 50331648
+  LayerCache                  0 / 16777216 (numLayers = 0)
+  Layers total          0 (numLayers = 0)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TessellationCache           0 /  1048576
+  TextDropShadowCache   2073664 /  2097152
+  PatchCache                704 /   131072
+  FontRenderer 0 A8     1048576 /  1048576
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total  1048576 /  1048576
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  16202964 bytes, 15.45 MB
+
+Profile data in ms:
+
+	Keyguard/android.view.ViewRootImpl@2fcea75 (visibility=8)
+View hierarchy:
+
+  Keyguard/android.view.ViewRootImpl@2fcea75
+  1 views, 0,80 kB of display lists
+
+
+Total ViewRootImpl: 1
+Total Views:        1
+Total DisplayList:  0,80 kB
+
+
+** Graphics info for pid 1105 [com.android.nfc] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 853 [com.android.systemui] **
+
+Recent DisplayList operations
+          DrawRenderNode
+            DrawRenderNode
+              DrawRenderNode
+                DrawRenderNode
+                  DrawRenderNode
+                    DrawRenderNode
+                      DrawRenderNode
+                        DrawRenderNode
+                          Save
+                          DrawBitmap
+                          RestoreToCount
+                        DrawRenderNode
+                          Save
+                          DrawBitmap
+                          RestoreToCount
+                      DrawRenderNode
+                        Save
+                        DrawBitmap
+                        RestoreToCount
+            DrawRenderNode
+              Save
+              ClipRect
+              Translate
+              DrawText
+              RestoreToCount
+            DrawRenderNode
+              Save
+              DrawBitmap
+              RestoreToCount
+          DrawRenderNode
+            DrawRenderNode
+              Save
+              ClipRect
+              Translate
+              DrawText
+              RestoreToCount
+        RestoreToCount
+    DrawRenderNode
+RestoreToCount
+DrawPatch
+DrawText
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+DrawBitmap
+multiDraw
+  DrawText
+DrawBitmap
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache          1502360 / 50331648
+  LayerCache             327680 / 16777216 (numLayers = 3)
+    Layer size 64x128; isTextureLayer()=0; texid=15 fbo=0; refs=1
+    Layer size 128x64; isTextureLayer()=0; texid=20 fbo=0; refs=1
+    Layer size 512x128; isTextureLayer()=0; texid=14 fbo=0; refs=1
+  Layers total     327680 (numLayers = 3)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TessellationCache           0 /  1048576
+  TextDropShadowCache         0 /  2097152
+  PatchCache              42624 /   131072
+  FontRenderer 0 A8     1048576 /  1048576
+  FontRenderer 0 RGBA   4194304 /  4194304
+  FontRenderer 0 total  5242880 /  5242880
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  7115544 bytes, 6.79 MB
+
+Profile data in ms:
+
+	StatusBar/android.view.ViewRootImpl@3ce763b6 (visibility=0)
+	Heads Up/android.view.ViewRootImpl@17183a8 (visibility=8)
+	NavigationBar/android.view.ViewRootImpl@d5c6d43 (visibility=0)
+	SearchPanel/android.view.ViewRootImpl@3e720e91 (visibility=4)
+View hierarchy:
+
+  StatusBar/android.view.ViewRootImpl@3ce763b6
+  382 views, 345,02 kB of display lists
+
+  Heads Up/android.view.ViewRootImpl@17183a8
+  2 views, 1,59 kB of display lists
+
+  NavigationBar/android.view.ViewRootImpl@d5c6d43
+  50 views, 44,46 kB of display lists
+
+  SearchPanel/android.view.ViewRootImpl@3e720e91
+  4 views, 3,19 kB of display lists
+
+
+Total ViewRootImpl: 4
+Total Views:        438
+Total DisplayList:  394,27 kB
+
+
+** Graphics info for pid 988 [com.google.android.googlequicksearchbox:interactor] **
+Profile data in ms:
+
+View hierarchy:
+
+
+Total ViewRootImpl: 0
+Total Views:        0
+Total DisplayList:  0,00 kB
+
+
+** Graphics info for pid 724 [system] **
+
+Recent DisplayList operations
+Save
+DrawRenderNode
+  DrawRenderNode
+  DrawRenderNode
+    DrawRenderNode
+      DrawBitmapRect
+    DrawRenderNode
+      DrawRenderNode
+        DrawRenderNode
+          Save
+          DrawBitmap
+          RestoreToCount
+  DrawRenderNode
+    DrawRenderNode
+      DrawBitmapRect
+RestoreToCount
+DrawBitmapRect
+DrawBitmapRect
+DrawBitmap
+Save
+DrawRenderNode
+  DrawRenderNode
+  DrawRenderNode
+    DrawRenderNode
+      DrawBitmapRect
+    DrawRenderNode
+      DrawRenderNode
+        DrawRenderNode
+          Save
+          DrawBitmap
+          RestoreToCount
+  DrawRenderNode
+    DrawRenderNode
+      DrawBitmapRect
+RestoreToCount
+DrawBitmapRect
+DrawBitmapRect
+DrawBitmap
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache                0 / 50331648
+  LayerCache                  0 / 16777216 (numLayers = 0)
+  Layers total          0 (numLayers = 0)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TessellationCache           0 /  1048576
+  TextDropShadowCache         0 /  2097152
+  PatchCache                  0 /   131072
+  FontRenderer 0 A8           0 /        0
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total        0 /        0
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  0 bytes, 0.00 MB
+
+Profile data in ms:
+
+	KeyguardScrim/android.view.ViewRootImpl@f800241 (visibility=8)
+View hierarchy:
+
+  KeyguardScrim/android.view.ViewRootImpl@f800241
+  1 views, 0,80 kB of display lists
+
+
+Total ViewRootImpl: 1
+Total Views:        1
+Total DisplayList:  0,80 kB
+

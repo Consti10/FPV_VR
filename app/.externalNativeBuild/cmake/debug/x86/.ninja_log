@@ -1,0 +1,5 @@
+# ninja log v5
+1	88	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	4f6b53dbe6d8165e
+89	232	0	../../../../build/intermediates/cmake/debug/obj/x86/libparser.so	43fe1fdfc8ac9f20
+1	85	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	4f6b53dbe6d8165e
+86	137	0	../../../../build/intermediates/cmake/debug/obj/x86/libparser.so	43fe1fdfc8ac9f20

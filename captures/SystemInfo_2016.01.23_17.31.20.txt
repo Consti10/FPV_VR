@@ -1,0 +1,93 @@
+Applications Graphics Acceleration Info:
+Uptime: 53872011 Realtime: 63391766
+
+** Graphics info for pid 11763 [FPV_VR] **
+
+Recent DisplayList operations
+              Save
+              ClipRect
+              DrawText
+              RestoreToCount
+    RestoreToCount
+  DrawRenderNode
+    DrawRenderNode
+      DrawRect
+RestoreToCount
+DrawRect
+DrawShadow
+DrawShadow
+DrawShadow
+DrawShadow
+DrawRoundRect
+DrawRoundRect
+DrawRoundRect
+DrawRoundRect
+multiDraw
+  DrawText
+DrawShadow
+DrawRect
+DrawRect
+DrawText
+Save
+DrawRenderNode
+  DrawRenderNode
+    DrawRect
+  DrawRenderNode
+    DrawRenderNode
+      DrawRenderNode
+        DrawRenderNode
+          DrawRenderNode
+            DrawColor
+RestoreToCount
+DrawRect
+DrawColor
+Save
+DrawRenderNode
+  DrawRenderNode
+    DrawRect
+  DrawRenderNode
+    DrawRenderNode
+      DrawRenderNode
+        DrawRenderNode
+          DrawRenderNode
+            DrawColor
+RestoreToCount
+DrawRect
+DrawColor
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache           282960 / 50331648
+  LayerCache                  0 / 16777216 (numLayers = 0)
+  Layers total          0 (numLayers = 0)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 / 10485760
+  TessellationCache        4464 /  1048576
+  TextDropShadowCache         0 /  2097152
+  PatchCache                320 /   131072
+  FontRenderer 0 A8     1048576 /  1048576
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total  1048576 /  1048576
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  1336320 bytes, 1.27 MB
+
+Profile data in ms:
+
+	FPV_VR/FPV_VR.MainActivity/android.view.ViewRootImpl@25a4020f (visibility=8)
+	FPV_VR/FPV_VR.OpenGLActivity/android.view.ViewRootImpl@29333e97 (visibility=0)
+View hierarchy:
+
+  FPV_VR/FPV_VR.MainActivity/android.view.ViewRootImpl@25a4020f
+  17 views, 13,55 kB of display lists
+
+  FPV_VR/FPV_VR.OpenGLActivity/android.view.ViewRootImpl@29333e97
+  8 views, 7,45 kB of display lists
+
+
+Total ViewRootImpl: 2
+Total Views:        25
+Total DisplayList:  21,00 kB
+

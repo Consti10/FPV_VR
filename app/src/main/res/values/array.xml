@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listentries" >
+        <item>Receive from UDP (Port 5000)</item>
+        <item>Receive from raw h.264 file</item>
+    </string-array>
+    <string-array name="listvalues">
+        <item>UDP</item>
+        <item>FILE</item>
+    </string-array>
+
+    <string-array name="listentries2" >
+        <item>Use Default HW decoder</item>
+        <item>Use Google SW decoder(pretty slow,but tested)</item>
+    </string-array>
+    <string-array name="listvalues2">
+        <item>HW</item>
+        <item>SW</item>
+    </string-array>
+
+
+
+</resources>

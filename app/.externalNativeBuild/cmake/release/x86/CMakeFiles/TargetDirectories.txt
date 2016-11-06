@@ -1,0 +1,3 @@
+C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/parser.dir
+C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/edit_cache.dir
+C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/rebuild_cache.dir

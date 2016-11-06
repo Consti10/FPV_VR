@@ -1,0 +1,14 @@
+Executable : C:\Users\Constantin\AppData\Local\Android\Sdk\cmake\3.6.3155560\bin\cmake.exe
+arguments : 
+-HC:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR
+-BC:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\.externalNativeBuild\cmake\debug\x86
+-GAndroid Gradle - Ninja
+-DANDROID_ABI=x86
+-DANDROID_NDK=C:\Users\Constantin\AppData\Local\Android\Sdk\ndk-bundle
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\cmake\debug\obj\x86
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_MAKE_PROGRAM=C:\Users\Constantin\AppData\Local\Android\Sdk\cmake\3.6.3155560\bin\ninja.exe
+-DCMAKE_TOOLCHAIN_FILE=C:\Users\Constantin\AppData\Local\Android\Sdk\ndk-bundle\build\cmake\android.toolchain.cmake
+-DANDROID_NATIVE_API_LEVEL=21
+jvmArgs : 
+
