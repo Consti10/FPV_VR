@@ -14,6 +14,7 @@ public class OGLProgramTexEx {
     private int mMVPMatrixHandle;
     private int mMVMatrixHandle;
     private int mProjMatrixHandle;
+    private int mSamplerLoc;
     private static final int FLOAT_SIZE_BYTES = 4;
     private static final int TRIANGLE_VERTICES_DATA_STRIDE_BYTES = 5 * FLOAT_SIZE_BYTES;
     private  boolean mDistortionCorrection;
@@ -30,6 +31,7 @@ public class OGLProgramTexEx {
         OpenGLHelper.checkGlError("glGetAttribLocation aPosition");
         mTextureHandle = GLES20.glGetAttribLocation(mProgram, "aTexCoord");
         OpenGLHelper.checkGlError("glGetAttribLocation aTexCoord");
+        mSamplerLoc = GLES20.glGetUniformLocation (mProgram, "sTexture" );
         if(mDistortionCorrection){
             mMVMatrixHandle=GLES20.glGetUniformLocation(mProgram,"uMVMatrix");
             mProjMatrixHandle=GLES20.glGetUniformLocation(mProgram,"uPMatrix");
@@ -50,6 +52,7 @@ public class OGLProgramTexEx {
         GLES20.glEnableVertexAttribArray(mTextureHandle);
         GLES20.glVertexAttribPointer(mTextureHandle, 3, GLES20.GL_FLOAT, false,
                 TRIANGLE_VERTICES_DATA_STRIDE_BYTES, 3 * 4);
+        GLES20.glUniform1i(mSamplerLoc, 1);
     }
     public void draw(float[] modViewM,float[] projM,int numTriangles){
         if(mDistortionCorrection){

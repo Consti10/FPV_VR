@@ -68,7 +68,7 @@
                 android:key="headTracking"
                 android:title="Head Tracking"
                 android:summary="Select Head Tracking on/off; TODO: calibrate ?"
-                android:defaultValue="fals" />
+                android:defaultValue="false" />
             <SwitchPreference
                 android:key="osd"
                 android:title="OSD"
@@ -169,7 +169,8 @@
                 android:key="dataSource"
                 android:summary="Select your Data Source"
                 android:entries="@array/listentries"
-                android:entryValues="@array/listvalues" />
+                android:entryValues="@array/listvalues"
+                android:defaultValue="UDP"/>
             <EditTextPreference
                 android:key="fileNameVideoSource"
                 android:title="File name1"

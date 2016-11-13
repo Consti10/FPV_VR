@@ -36,7 +36,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     private float[] mRightEyeTranslate=new float[16];
     private int[] textures = new int[2];
     //public static boolean next_frame=true;
-    private boolean enable_stereo_renderer=false;
+    private boolean enable_stereo_renderer=true;
     private boolean unlimitedOGLFps;
     private boolean swapIntervallZero=true;
     private boolean osd=true;
@@ -69,6 +69,8 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
     private int zaehlerFramerate=0;
     private double timeb=0;
     private double fps=0;
+    private double timeInit;
+    private boolean FULL_VERSION=true;
 
     public MyGLRenderer(Context context){
         mContext =context;
@@ -89,15 +91,6 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
             interpupilarryDistance=Float.parseFloat(settings.getString("interpupillaryDistance","0.2"));
         }catch (Exception e){e.printStackTrace();interpupilarryDistance=0.2f;}
         if(interpupilarryDistance>=1 || interpupilarryDistance<0.0f){interpupilarryDistance=0.2f;}
-        headTracking=settings.getBoolean("headTracking", true);
-        enable_stereo_renderer=settings.getBoolean("enable_stereo_renderer", true);
-        distortionCorrection=settings.getBoolean("distortionCorrection", false);
-        try{
-            tesselationFactor =(int)Float.parseFloat(settings.getString("tesselationFactor","1.0"));
-            if(tesselationFactor<1){tesselationFactor=1;}
-        }catch (Exception e){}
-        if(distortionCorrection&&(tesselationFactor<2)){tesselationFactor=20;}
-        numberCanvasTriangles=tesselationFactor*tesselationFactor;
         try{
             modelDistance =Float.parseFloat(settings.getString("modelDistance","3.0"));
         }catch (Exception e){e.printStackTrace();modelDistance =3.0f;}
@@ -106,6 +99,15 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
             viewportScale =Float.parseFloat(settings.getString("viewportScale","1.0"));
         }catch (Exception e){e.printStackTrace();viewportScale=1.0f;}
         if(viewportScale>1 || viewportScale <=0){viewportScale=1.0f;}
+        headTracking=settings.getBoolean("headTracking", false);
+        enable_stereo_renderer=settings.getBoolean("enable_stereo_renderer", true);
+        distortionCorrection=settings.getBoolean("distortionCorrection", false);
+        try{
+            tesselationFactor =(int)Float.parseFloat(settings.getString("tesselationFactor","1.0"));
+            if(tesselationFactor<1){tesselationFactor=1;}
+        }catch (Exception e){tesselationFactor=1;}
+        if(distortionCorrection&&(tesselationFactor<20)){tesselationFactor=20;}
+        numberCanvasTriangles=tesselationFactor*tesselationFactor;
         if(!enable_stereo_renderer){headTracking=false;distortionCorrection=false;tesselationFactor=1;
             numberCanvasTriangles=tesselationFactor*tesselationFactor;}
     }
@@ -156,6 +158,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         if(swapIntervallZero){
             EGL14.eglSwapInterval(EGL14.eglGetCurrentDisplay(), 0);
         }
+        timeInit=System.currentTimeMillis();
     }
 
     @Override
@@ -246,6 +249,10 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
             }
             timeb = System.currentTimeMillis();
             zaehlerFramerate = 0;
+        }
+        if(!FULL_VERSION){
+            double timeElapsed= System.currentTimeMillis();
+            System.out.println("Time elapsed:"+timeElapsed);
         }
     }
     public void onSurfaceDestroyed() {
