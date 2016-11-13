@@ -3,3 +3,7 @@
 126	173	0	../../../../build/intermediates/cmake/debug/obj/mips/libparser.so	23720a213989566f
 1	148	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	3cea83f7546398e7
 148	193	0	../../../../build/intermediates/cmake/debug/obj/mips/libparser.so	23720a213989566f
+1	2345	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	3cea83f7546398e7
+2345	2853	0	../../../../build/intermediates/cmake/debug/obj/mips/libparser.so	23720a213989566f
+46	2244	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	3cea83f7546398e7
+2244	2748	0	../../../../build/intermediates/cmake/debug/obj/mips/libparser.so	23720a213989566f

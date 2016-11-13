@@ -1,3 +1,5 @@
 # ninja log v5
 0	214	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	fe52f0a8a0b8a24a
 215	272	0	../../../../build/intermediates/cmake/release/obj/armeabi/libparser.so	bde3a0394e1a99a5
+1	165	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	fe52f0a8a0b8a24a
+165	417	0	../../../../build/intermediates/cmake/release/obj/armeabi/libparser.so	bde3a0394e1a99a5

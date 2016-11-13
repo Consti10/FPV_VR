@@ -46,7 +46,7 @@ public class OGLProgramTex {
         GLES20.glVertexAttribPointer(mTextureHandle, 2, GLES20.GL_FLOAT, false,
                 0, 0);
         GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, 0);
-        GLES20.glUniform1i(mSamplerLoc, 0);
+        GLES20.glUniform1i(mSamplerLoc, textureId);
     }
     public void draw(float[] modViewM,float[] projM,int trianglesOff,int numTriangles){
         if(mDistortionCorrection){

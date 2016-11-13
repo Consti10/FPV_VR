@@ -52,7 +52,7 @@ public class OGLProgramTexEx {
         GLES20.glEnableVertexAttribArray(mTextureHandle);
         GLES20.glVertexAttribPointer(mTextureHandle, 3, GLES20.GL_FLOAT, false,
                 TRIANGLE_VERTICES_DATA_STRIDE_BYTES, 3 * 4);
-        GLES20.glUniform1i(mSamplerLoc, 1);
+        GLES20.glUniform1i(mSamplerLoc, textureID);
     }
     public void draw(float[] modViewM,float[] projM,int numTriangles){
         if(mDistortionCorrection){

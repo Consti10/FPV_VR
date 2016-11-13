@@ -206,6 +206,9 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
             Matrix.multiplyMM(mLeftEyeViewM, 0,  mLeftEyeTranslate,  0, tempEyeViewM, 0);
             Matrix.multiplyMM(mRightEyeViewM, 0, mRightEyeTranslate, 0, tempEyeViewM, 0);
         }
+        if(osd) {
+            mOSD.setupModelMatrices();
+        }
         //GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
         //Danger: getTimestamp can't be used to compare with System.nanoTime or System.currentTimeMillis
         //because it's zero point depends on the sources providing the image;
@@ -226,7 +229,6 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         }
         mOGLProgramTexEx.afterDraw();
         if(osd){
-            mOSD.setupModelMatrices();
             if(enable_stereo_renderer){
                 GLES20.glViewport(leftViewportX, leftViewPortY, leftViewportWidth, leftViewPortHeight);
                 mOSD.drawLeftEye(mLeftEyeViewM);
@@ -250,6 +252,11 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
             timeb = System.currentTimeMillis();
             zaehlerFramerate = 0;
         }
+        /*try {
+            Thread.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         if(!FULL_VERSION){
             double timeElapsed= System.currentTimeMillis();
             System.out.println("Time elapsed:"+timeElapsed);
