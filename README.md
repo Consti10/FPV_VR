@@ -7,7 +7,7 @@ This Android app can receive a fpv video stream, decode it with ultra low latenc
 Furthermore you can enable an OSD in the VR world.
 To decode the video it uses the low-level Android MediaCodec API and for displaying the video on screen it uses ether the SurfaceView or TextureView pipeline
 provided by Android, or when you want to use the app in VR mode and/or with OSD it uses OpenGL ES2.0 .
-You can ether buy this app in the android Play Store https://play.google.com/store/apps/details?id=com.constantin.wilson.FPV_VR&hl=en, support developement and get active help with the app.
+You can ether buy this app in the android Play Store https://play.google.com/store/apps/details?id=com.constantin.wilson.FPV_VR&hl=en, support developement and get active support with the app.
 Or you can compile the source code from https://github.com/Consti10/FPV_VR for private use with android-studio.
 
 Howto use with EZ-Wifibroadcast
