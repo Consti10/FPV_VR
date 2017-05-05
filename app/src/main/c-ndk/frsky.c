@@ -5,9 +5,13 @@
 #include "frsky.h"
 
 #include <stdint.h>
+#include <android/log.h>
 #include "telemetry.h"
 
+int ret_consti=0;
+
 int frsky_parse_buffer(frsky_state_t *state, telemetry_data_t *td, uint8_t *buf, int buflen) {
+    ret_consti=0;
 	int new_data = 0;
 	int i;
 	for(i=0; i<buflen; ++i) {
@@ -27,6 +31,7 @@ int frsky_parse_buffer(frsky_state_t *state, telemetry_data_t *td, uint8_t *buf,
 				if(ch == 0x5e) {
 					state->pkg_pos = 0;
 					new_data = new_data | frsky_interpret_packet(state, td);
+                    ret_consti=1;
 				}
 				else {
 					if(state->pkg_pos >= sizeof(state->pkg)) {
@@ -43,7 +48,8 @@ int frsky_parse_buffer(frsky_state_t *state, telemetry_data_t *td, uint8_t *buf,
 			break;
 		}
 	}
-	return new_data;
+	//return new_data;
+    return ret_consti;
 }
 
 int frsky_interpret_packet(frsky_state_t *state, telemetry_data_t *td) {

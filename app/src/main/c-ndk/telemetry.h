@@ -22,9 +22,12 @@ typedef struct {
     int16_t ew, ns;  //?maybe day,time
     int16_t roll, pitch,yaw;
 	uint8_t rssi;
+	float WBrssi;
 	uint8_t airspeed;
 	uint8_t sats;
 	uint8_t fix;
+	//mavlink
+	float heading;
 } telemetry_data_t;
 
 void telemetry_init(telemetry_data_t *td);

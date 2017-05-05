@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <SwitchPreference
+        android:key="FirstStart"
+        android:defaultValue="true" />
+
+    <SwitchPreference
+        android:key="MinAndroid7"
+        android:defaultValue="false" />
+
+    <SwitchPreference
+        android:key="QCOM_TILED_RENDERING"
+        android:defaultValue="false" />
+
+    <SwitchPreference
+        android:key="QCOM"
+        android:defaultValue="false" />
+
+/*MSAA when front buffer rendering*/
+    <SwitchPreference
+        android:key="MSAA"
+        android:defaultValue="false" />
+
+
+
+
+</PreferenceScreen>

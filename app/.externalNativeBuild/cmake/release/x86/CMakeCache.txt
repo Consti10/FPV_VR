@@ -18,13 +18,22 @@
 ANDROID_ABI:UNINITIALIZED=x86
 
 //No help, variable specified on the command line.
-ANDROID_NATIVE_API_LEVEL:UNINITIALIZED=21
-
-//No help, variable specified on the command line.
 ANDROID_NDK:UNINITIALIZED=C:\Users\Constantin\AppData\Local\Android\Sdk\ndk-bundle
 
-//Path to a program.
+//No help, variable specified on the command line.
+ANDROID_PLATFORM:UNINITIALIZED=android-21
+
+//Archiver
 CMAKE_AR:FILEPATH=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/windows-x86_64/bin/i686-linux-android-ar.exe
+
+//Flags used by the compiler during all build types.
+CMAKE_ASM_FLAGS:STRING=
+
+//Flags used by the compiler during debug builds.
+CMAKE_ASM_FLAGS_DEBUG:STRING=
+
+//Flags used by the compiler during release builds.
+CMAKE_ASM_FLAGS_RELEASE:STRING=
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
@@ -125,7 +134,7 @@ CMAKE_OBJDUMP:FILEPATH=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=Project
 
-//Path to a program.
+//Ranlib
 CMAKE_RANLIB:FILEPATH=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/windows-x86_64/bin/i686-linux-android-ranlib.exe
 
 //Flags used by the linker during the creation of dll's.
@@ -183,11 +192,17 @@ Project_BINARY_DIR:STATIC=C:/Users/Constantin/Desktop/Android Studio Projects/FP
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR
 
+//Dependencies for the target
+VsyncHelperNative_LIB_DEPENDS:STATIC=general;C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-x86/usr/lib/liblog.so;
+
 //Path to a library.
 log-lib:FILEPATH=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-x86/usr/lib/liblog.so
 
 //Dependencies for the target
 parser_LIB_DEPENDS:STATIC=general;C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-x86/usr/lib/liblog.so;
+
+//Dependencies for the target
+qcom_LIB_DEPENDS:STATIC=general;C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-x86/usr/lib/liblog.so;general;VsyncHelperNative;general;android;general;log;general;EGL;general;GLESv2;
 
 
 ########################

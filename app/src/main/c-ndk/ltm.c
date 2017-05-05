@@ -57,9 +57,12 @@ static enum _serial_state {
 }
 c_state = IDLE;
 
-void ltm_read(telemetry_data_t *td, uint8_t *buf, int buflen) {
+int ret;
+
+int ltm_read(telemetry_data_t *td, uint8_t *buf, int buflen) {
   //uint8_t test=buf[0];
   //__android_log_print(ANDROID_LOG_ERROR, "FPV_VR", "HELLO from ltm_read %d",test);
+  ret=0;
   int i;
   for(i=0; i<buflen; ++i) {
     uint8_t c = buf[i];
@@ -104,6 +107,7 @@ void ltm_read(telemetry_data_t *td, uint8_t *buf, int buflen) {
             	//TODO
 		//lastpacketreceived = millis();
             ltm_check(td);
+          ret=1;
             c_state = IDLE;
           //__android_log_print(ANDROID_LOG_ERROR, "FPV_VR", "HELLO from check");
         }
@@ -115,6 +119,7 @@ void ltm_read(telemetry_data_t *td, uint8_t *buf, int buflen) {
       else LTMserialBuffer[LTMreceiverIndex++]=c;
   }
 	}
+  return ret;
 }
 
 // --------------------------------------------------------------------------------------

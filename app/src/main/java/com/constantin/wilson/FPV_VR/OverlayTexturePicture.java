@@ -16,9 +16,11 @@ public class OverlayTexturePicture {
     private Paint textPaint;
     private Bitmap bmp;
 
-    public static int number_of_units=10+10+(5*3)+(14*3);
-    public static float heightO=1.0f/number_of_units*20;
-    public static float stringO=1.0f/number_of_units*35;
+    public static int number_of_units=10+10+1+(5*3)+(14*3); //36+42=78
+    public static float heightO=1.0f/number_of_units*21;
+    public static float stringO=1.0f/number_of_units*36;
+    public static int nQuadsPerUnit=7;
+    public static int nNumberQuadsPerUnit=4;
     private int unitWidth=50,unitHeight=50;
     private int atlasWidth=number_of_units*unitWidth;
     private int atlasHeight=unitHeight;
@@ -27,9 +29,8 @@ public class OverlayTexturePicture {
         //Texture Atlas
         bmp=Bitmap.createBitmap(atlasWidth,atlasHeight, Bitmap.Config.ARGB_8888);
         bmp.setHasAlpha(true);
-        bmp.eraseColor(Color.TRANSPARENT);
-        GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bmp, 0);
         c=new Canvas(bmp);
+        bmp.eraseColor(Color.TRANSPARENT);
         textPaint=new Paint();
         textPaint.setColor(Color.WHITE);
         textPaint.setTextSize(unitHeight);
@@ -55,29 +56,36 @@ public class OverlayTexturePicture {
         c.drawText("7.",17*unitWidth,unitHeight-(unitHeight/5),textPaint);
         c.drawText("8.",18*unitWidth,unitHeight-(unitHeight/5),textPaint);
         c.drawText("9.",19*unitWidth,unitHeight-(unitHeight/5),textPaint);
+        //draw our "-"
+        textPaint.setTextSize(unitHeight+30);
+        c.drawText(" -",20*unitWidth,unitHeight-(unitHeight/9),textPaint);
+        textPaint.setTextSize(unitHeight);
         //draw our height markers
         textPaint.setColor(Color.WHITE);
-        c.drawText("100m",20*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText("75m", 23*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText("50m", 26*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText("25m", 29*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText("0m" , 32*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText("100m",21*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText("75m", 24*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText("50m", 27*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText("25m", 30*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText("0m" , 33*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
         //draw our 14 strings for overlay units
         textPaint.setColor(Color.WHITE);
-        c.drawText("fpsD",35*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText("fpsGL",38*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText(":Lat",41*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText(":Lon",44*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText("%Bat.",47*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText(":V",50*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText(":Rssi",53*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText(":A",56*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText(":X",59*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText(":X",62*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText(":km/h",65*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText(".X",68*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText(":m(Ba)",71*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
-        c.drawText(":m(g)",74*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText("fpsD",36*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText("fpsGL",39*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText(":Lat",42*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText(":Lon",45*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText("%Bat.",48*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText(":V",51*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText(":Rssi",54*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText(":A",57*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText(":m(Ho)",60*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText(":X",63*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText(":km/h",66*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText(".X",69*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText(":m(Ba)",72*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
+        c.drawText(":m(G)",75*unitWidth,unitHeight-((int)(unitHeight/5)), textPaint);
         return bmp;
+    }
+    public void recycle(){
+        bmp.recycle();
     }
 }

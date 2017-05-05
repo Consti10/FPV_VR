@@ -22,6 +22,30 @@ add_library( # Specifies the name of the library.
              # Specifies a path to native header files.
              include_directories(app/src/main/c-ndk/)
 
+add_library( # Specifies the name of the library.
+                          qcom
+
+                          # Sets the library as a shared library.
+                          SHARED
+
+                          # Provides a relative path to your source file(s).
+                          app/src/main/c-ndk/qcom.c )
+
+                          # Specifies a path to native header files.
+                          include_directories(app/src/main/c-ndk/)
+
+add_library( # Specifies the name of the library.
+             VsyncHelperNative
+
+             # Sets the library as a shared library.
+             SHARED
+
+             # Provides a relative path to your source file(s).
+             app/src/main/c-ndk/package2/VsyncHelperNative.c )
+
+             # Specifies a path to native header files.
+             include_directories(app/src/main/c-ndk/package2/)
+
 find_library( # Sets the name of the path variable.
               log-lib
 
@@ -39,4 +63,25 @@ target_link_libraries( # Specifies the target library.
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
+target_link_libraries( # Specifies the target library.
+                       VsyncHelperNative
+
+                       # Links the target library to the log library
+                       # included in the NDK.
+                       ${log-lib} )
+
+target_link_libraries( # Specifies the target library.
+                       qcom
+
+                       # Links the target library to the log library
+                       # included in the NDK.
+                       ${log-lib} )
+
+target_link_libraries(qcom
+                      VsyncHelperNative
+                      android
+                      log
+                      EGL
+                      GLESv2)
+
 

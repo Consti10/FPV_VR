@@ -10,7 +10,7 @@ import android.view.WindowManager;
 
 public class TextureViewActivity extends AppCompatActivity implements TextureView.SurfaceTextureListener{
     private TextureView mTextureView;
-    private UdpStreamReceiver mDecoder;
+    private UdpVideoReceiver mDecoder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class TextureViewActivity extends AppCompatActivity implements TextureVie
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
         Surface mDecoderSurface=new Surface(surface);
-        mDecoder=new UdpStreamReceiver(mDecoderSurface,5000,this);
+        mDecoder=new UdpVideoReceiver(mDecoderSurface,5000,this);
         mDecoder.startDecoding();
 
     }

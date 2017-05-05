@@ -1,9 +1,7 @@
 # ninja log v5
-0	79	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	99612331e5ad8484
-80	361	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libparser.so	9243914eb471fd84
-1	84	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	99612331e5ad8484
-84	138	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libparser.so	9243914eb471fd84
-1	1332	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	99612331e5ad8484
-1332	2140	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libparser.so	9243914eb471fd84
-17	1589	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	99612331e5ad8484
-1589	2264	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libparser.so	9243914eb471fd84
+0	1087	0	CMakeFiles/VsyncHelperNative.dir/app/src/main/c-ndk/package2/VsyncHelperNative.c.o	d756499c54dcf5ca
+1087	1253	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libVsyncHelperNative.so	60db8a2a393eec1b
+1253	1660	0	CMakeFiles/qcom.dir/app/src/main/c-ndk/qcom.c.o	d552e3e43cfcf692
+1660	1804	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libqcom.so	4029b10e22d55994
+0	668	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	fa0e336be0c78051
+669	723	0	../../../../build/intermediates/cmake/debug/obj/x86_64/libparser.so	dfbe9906560fc278

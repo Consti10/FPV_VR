@@ -14,7 +14,9 @@ import java.nio.ByteBuffer;
 
 /**
  * Created by Constantin on 26.10.2016.
- * Has a lot of features to reduce latency included,most of them are found by experimenting
+ * Has a lot of features to reduce latency included,
+ * most of them are found by experimenting
+ * using MediaCodec API. some compability-problems with different chipsets
  */
 
 public class LowLagDecoder {
@@ -27,26 +29,41 @@ public class LowLagDecoder {
     private MediaCodec decoder;
     private MediaFormat format;
 
-    public boolean running=true;
+    public volatile boolean running=true;
     public boolean decoderConfigured=false;
     public int current_fps=0;
     public long averageWaitForInputBufferLatency=0;
 
     private boolean DecoderMultiThread=true;
     private boolean userDebug=false;
+    private boolean formatRPI=false;
+    //public boolean formatStream=false;
     private int zaehlerFramerate=0;
     private long timeB2=0;
+    private ByteBuffer inputBuffer;
+    private int fps;
+    private int outputBufferIndex;
+    private int inputBufferIndex;
+    private long latency;
     private long fpsSum=0,fpsCount=0,averageDecoderfps=0;
     private long HWDecoderlatencySum=0;
     private int outputCount=0;
     private long averageHWDecoderLatency=0;
     private long presentationTimeMs=0;
+    public int width=0,height=0;
+    public volatile float lastVideoFormat;
+    public volatile boolean videoFormatChanged;
 
     public LowLagDecoder(Surface surface,Context context){
         mContext=context;
         mSurface=surface;
         settings= PreferenceManager.getDefaultSharedPreferences(mContext);
         DecoderMultiThread=settings.getBoolean("decoderMultiThread", true);
+        formatRPI=settings.getBoolean("formatRPI",true);
+        try{
+            lastVideoFormat=Float.parseFloat(settings.getString("videoFormat","1.3333"));
+        }catch(Exception e){e.printStackTrace();}
+        //formatStream=settings.getBoolean("formatStream",false);
         userDebug=settings.getBoolean("userDebug", false);
         if(userDebug){
             SharedPreferences.Editor editor=settings.edit();
@@ -78,8 +95,14 @@ public class LowLagDecoder {
         System.out.println("Codec Info: " + decoder.getCodecInfo().getName());
         if(userDebug){ makeToast("Selected decoder: " + decoder.getCodecInfo().getName());}
         format = MediaFormat.createVideoFormat("video/avc", 1920, 1080);
-        format.setByteBuffer("csd-0",csd0);
-        format.setByteBuffer("csd-1", csd1);
+        /*if(formatStream){
+            format.setByteBuffer("csd-0",csd0);
+            format.setByteBuffer("csd-1", csd1);
+        }*/
+        if(formatRPI){
+            format.setByteBuffer("csd-0",MediaCodecFormatHelper.getRpiCsd0());
+            format.setByteBuffer("csd-1", MediaCodecFormatHelper.getRpiCsd1());
+        }
         try {
             //This configuration will be overwritten anyway when we put an sps into the buffer
             //But: My decoder agrees with this,but some may not; to be improved
@@ -101,42 +124,59 @@ public class LowLagDecoder {
                 @Override
                 public void run() {while(running){checkOutput();}}
             };
-            thread2.setPriority(Thread.MAX_PRIORITY);
+            //thread2.setPriority(Thread.MAX_PRIORITY);
+            thread2.setPriority(Thread.NORM_PRIORITY);
             thread2.start();
         }
     }
     public void stopDecoder(){
+        //System.out.println("HELLO FROM STOPDECODING");
+        running=false;
         if(decoder!=null){
             try {
+                decoder.signalEndOfInputStream();
+            }catch (Exception e){handleDecoderException(e,"signal end of input");}
+            try {
                 decoder.flush();
-                decoder.stop();
-                decoder.release();
             }catch (Exception e){handleDecoderException(e,"stopdecoder");}
+            try{
+                decoder.stop();
+            }catch (Exception e){handleDecoderException(e,"flushDecoder");}
+            try {
+                decoder.release();
+            }catch (Exception e){handleDecoderException(e,"releaseDecoder");}
         }
-        running=false;
     }
 
     private void checkOutput() {
+        //System.out.println("CheckOutput Thread Priority:"+Thread.currentThread().getPriority());
         try {
-            int outputBufferIndex = decoder.dequeueOutputBuffer(info, 0);
+            //Thread.sleep(10000000);
+            outputBufferIndex = decoder.dequeueOutputBuffer(info, 0);
             if (outputBufferIndex >= 0) {
                 //
                 zaehlerFramerate++;
                 if((System.currentTimeMillis()-timeB2)>1000) {
-                    int fps = (zaehlerFramerate );
+                    fps = (zaehlerFramerate );
                     current_fps=(int)fps;
                     timeB2 = System.currentTimeMillis();
                     zaehlerFramerate = 0;
                     //Log.w("ReceiverDecoderThread", "fps:" + fps);
                     fpsSum+=fps;
                     fpsCount++;
-                    if(fpsCount==1){
-                        makeToast("First video frame has been decoded");
+                    format=decoder.getOutputFormat();
+                    width=format.getInteger(MediaFormat.KEY_WIDTH);
+                    height=format.getInteger(MediaFormat.KEY_HEIGHT);
+                    if(((float)width/height)!=lastVideoFormat){
+                        videoFormatChanged=true;
+                    }else {
+                        videoFormatChanged=false;
                     }
                 }
-                long latency=((System.nanoTime()-info.presentationTimeUs)/1000000);
+                latency=((System.nanoTime()-info.presentationTimeUs)/1000000);
                 if(latency>=0 && latency<=400){
                     outputCount++;
+                    //System.out.println("HWDecoder latency"+latency);
                     HWDecoderlatencySum+=latency;
                     averageHWDecoderLatency=HWDecoderlatencySum/outputCount;
                     //Log.w("checkOutput 1","hw decoder latency:"+latency);
@@ -148,7 +188,10 @@ public class LowLagDecoder {
                 //requires android 5
                 decoder.releaseOutputBuffer(outputBufferIndex,System.nanoTime()); //needs api 21
                 //decoder.releaseOutputBuffer(outputBufferIndex,true);
-
+                /*We got an output buffer. The next one probably won't be available in the next 5ms, so we can
+                safely sleep that long without hurting performance
+                 */
+                Thread.sleep(5);
             } else if (outputBufferIndex == MediaCodec.INFO_OUTPUT_FORMAT_CHANGED || outputBufferIndex==MediaCodec.INFO_OUTPUT_BUFFERS_CHANGED) {
                 Log.d("UDP", "output format / buffers changed");
             } else if(outputBufferIndex!=MediaCodec.INFO_TRY_AGAIN_LATER) {
@@ -162,17 +205,23 @@ public class LowLagDecoder {
         }catch(Exception e) {
             handleDecoderException(e,"checkOutput");
         }
+        /*to improve performance,sleep 1ms. increases lag maximum 1ms and improves performance a lot*/
+        try {
+            Thread.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @SuppressWarnings("deprecation")
     public void feedDecoder(byte[] n, int len) {
-        //
+        //System.out.println("FEED NALU");
         while (running) {
             try {
                 inputBuffers = decoder.getInputBuffers();
-                int inputBufferIndex = decoder.dequeueInputBuffer(0);
+                inputBufferIndex = decoder.dequeueInputBuffer(0);
                 if (inputBufferIndex >= 0) {
-                    ByteBuffer inputBuffer = inputBuffers[inputBufferIndex];
+                    inputBuffer = inputBuffers[inputBufferIndex];
                     inputBuffer.put(n, 0, len);
                     presentationTimeMs=System.nanoTime();
                     decoder.queueInputBuffer(inputBufferIndex, 0, len,presentationTimeMs,0);
@@ -190,7 +239,11 @@ public class LowLagDecoder {
                 handleDecoderException(e,"feedDecoder");
             }
         }
-
+        /*try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
 
     }
 
@@ -234,7 +287,7 @@ public class LowLagDecoder {
             }
             try {Thread.sleep(100,0);} catch (InterruptedException e2) {e2.printStackTrace();}
         }
-        e.printStackTrace();
+        //e.printStackTrace();
     }
     private void makeToast(final String message) {
         ((Activity) mContext).runOnUiThread(new Runnable() {

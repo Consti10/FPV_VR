@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 public class SurfaceViewActivity extends AppCompatActivity implements SurfaceHolder.Callback {
-    private UdpStreamReceiver mDecoder = null;
+    private UdpVideoReceiver mDecoder = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +42,7 @@ public class SurfaceViewActivity extends AppCompatActivity implements SurfaceHol
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
         if(mDecoder == null) {
-            mDecoder = new UdpStreamReceiver(holder.getSurface(), 5000,this);
+            mDecoder = new UdpVideoReceiver(holder.getSurface(), 5000,this);
             mDecoder.startDecoding();
         }
     }

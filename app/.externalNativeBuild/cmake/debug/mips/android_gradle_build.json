@@ -11,6 +11,24 @@
 	],
 	"libraries" : 
 	{
+		"VsyncHelperNative-Debug-mips" : 
+		{
+			"abi" : "mips",
+			"artifactName" : "VsyncHelperNative",
+			"buildCommand" : "C:\\Users\\Constantin\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build \"C:\\Users\\Constantin\\Desktop\\Android Studio Projects\\FPV_VR\\app\\.externalNativeBuild\\cmake\\debug\\mips\" --target VsyncHelperNative",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=mipsel-none-linux-android --gcc-toolchain=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-mips -DVsyncHelperNative_EXPORTS -I..\\..\\..\\..\\src\\main\\c-ndk -I..\\..\\..\\..\\src\\main\\c-ndk\\package2  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/src/main/c-ndk/package2/VsyncHelperNative.c",
+					"workingDirectory" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/.externalNativeBuild/cmake/debug/mips"
+				}
+			],
+			"output" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/build/intermediates/cmake/debug/obj/mips/libVsyncHelperNative.so",
+			"toolchain" : "2207939819"
+		},
 		"parser-Debug-mips" : 
 		{
 			"abi" : "mips",
@@ -21,12 +39,30 @@
 			[
 				
 				{
-					"flags" : "  -target mipsel-none-linux-android -gcc-toolchain C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/toolchains/mipsel-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-mips -Dparser_EXPORTS -I..\\..\\..\\..\\src\\main\\c-ndk  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"flags" : "  --target=mipsel-none-linux-android --gcc-toolchain=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-mips -Dparser_EXPORTS -I..\\..\\..\\..\\src\\main\\c-ndk -I..\\..\\..\\..\\src\\main\\c-ndk\\package2  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
 					"src" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/src/main/c-ndk/parser.c",
 					"workingDirectory" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/.externalNativeBuild/cmake/debug/mips"
 				}
 			],
 			"output" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/build/intermediates/cmake/debug/obj/mips/libparser.so",
+			"toolchain" : "2207939819"
+		},
+		"qcom-Debug-mips" : 
+		{
+			"abi" : "mips",
+			"artifactName" : "qcom",
+			"buildCommand" : "C:\\Users\\Constantin\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build \"C:\\Users\\Constantin\\Desktop\\Android Studio Projects\\FPV_VR\\app\\.externalNativeBuild\\cmake\\debug\\mips\" --target qcom",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=mipsel-none-linux-android --gcc-toolchain=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/toolchains/mips64el-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-mips -Dqcom_EXPORTS -I..\\..\\..\\..\\src\\main\\c-ndk -I..\\..\\..\\..\\src\\main\\c-ndk\\package2  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/src/main/c-ndk/qcom.c",
+					"workingDirectory" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/.externalNativeBuild/cmake/debug/mips"
+				}
+			],
+			"output" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/build/intermediates/cmake/debug/obj/mips/libqcom.so",
 			"toolchain" : "2207939819"
 		}
 	},

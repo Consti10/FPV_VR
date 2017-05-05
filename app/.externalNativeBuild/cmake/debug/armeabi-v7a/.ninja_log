@@ -1,9 +1,7 @@
 # ninja log v5
-0	126	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	c88c76ba71ecdb46
-127	257	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libparser.so	6ee096ecd984b8af
-1	125	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	c88c76ba71ecdb46
-125	208	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libparser.so	6ee096ecd984b8af
-1	2410	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	c88c76ba71ecdb46
-2410	3059	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libparser.so	6ee096ecd984b8af
-20	2760	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	c88c76ba71ecdb46
-2760	3376	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libparser.so	6ee096ecd984b8af
+0	2382	0	CMakeFiles/VsyncHelperNative.dir/app/src/main/c-ndk/package2/VsyncHelperNative.c.o	19639e270daa3f69
+2382	2557	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libVsyncHelperNative.so	15e6c783d1598b9
+2557	3023	0	CMakeFiles/qcom.dir/app/src/main/c-ndk/qcom.c.o	31097b10c571de0e
+3023	3180	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libqcom.so	4738645bd1d7ab15
+0	926	0	CMakeFiles/parser.dir/app/src/main/c-ndk/parser.c.o	627a8f3710da3afe
+927	1076	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libparser.so	7da51c5c526cdd75

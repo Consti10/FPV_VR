@@ -19,10 +19,13 @@ public class TestActivity extends AppCompatActivity {
     Context mContext;
     TestThread mTestThread;
     TestThread2 mTestThread2;
+    TestThread3 mTestThread3;
     TextView mTextView;
     TextView mTextView2;
     TextView mTextView3;
     TextView mTextView4;
+    TextView mTextViewFRSKY,mTextViewLTM;
+    boolean running=false;
 
 
     @Override
@@ -33,9 +36,12 @@ public class TestActivity extends AppCompatActivity {
         mTextView2=(TextView)findViewById(R.id.textView2);
         mTextView3=(TextView)findViewById(R.id.textView3);
         mTextView4=(TextView)findViewById(R.id.textView4);
+        mTextViewFRSKY=(TextView)findViewById(R.id.textView5);
+        mTextViewLTM=(TextView)findViewById(R.id.textView6);
         mContext=this;
         mTestThread=new TestThread();
         mTestThread2=new TestThread2();
+        mTestThread3=new TestThread3();
     }
 
     @Override
@@ -46,6 +52,9 @@ public class TestActivity extends AppCompatActivity {
         }
         if(mTestThread2 != null){
             mTestThread2.interrupt();
+        }
+        if(mTestThread3 != null){
+            mTestThread3.interrupt();
         }
         System.out.println("onPause");
     }
@@ -62,16 +71,20 @@ public class TestActivity extends AppCompatActivity {
             mTestThread2=new TestThread2();
         }
         mTestThread2.start();
+        if(mTestThread3 == null) {
+            mTestThread3=new TestThread3();
+        }
+        mTestThread3.start();
 
     }
 
     private class TestThread extends Thread{
         long number_received_bytes=0;
         long number_received_NALU=0;
-        boolean running=false;
         DatagramPacket p=null;
         DatagramSocket s=null;
         byte[] message = new byte[1024];
+        int exceptionC=0;
 
         public TestThread(){
         }
@@ -101,7 +114,11 @@ public class TestActivity extends AppCompatActivity {
                         parseDatagram(message,p.getLength());
                     }
                 } catch (IOException e) {
-                    makeToast("couldn't receive any bytes on 5000");
+                    exceptionC++;
+                    if(exceptionC>2){
+                        makeToast("couldn't receive any bytes on 5000");
+                        exceptionC=0;
+                    }
                 }
             }
 
@@ -177,14 +194,16 @@ public class TestActivity extends AppCompatActivity {
         }
     }
 
-
+    private long number_received_bytes=0;
+    int mValidFRSKYPackets=0;
+    int mValidLTMPackets=0;
 
     private class TestThread2 extends Thread{
-        long number_received_bytes=0;
-        boolean running=false;
+        //long number_received_bytes=0;
         DatagramPacket p=null;
         DatagramSocket s=null;
         byte[] message = new byte[1024];
+        int exceptionC2 =0;
 
         public TestThread2(){
         }
@@ -209,10 +228,26 @@ public class TestActivity extends AppCompatActivity {
                     s.receive(p);
                     if(p.getLength()>0){
                         number_received_bytes+=p.getLength();
-                        makeText("" +number_received_bytes + " bytes received(OSD,5001)",mTextView4);
+                        makeText("" +number_received_bytes + " bytes received(OSD,5001&5002)",mTextView4);
+                        int ret=parseFRSKY(message,p.getLength());
+                        if(ret!=0){
+                            //System.out.println("FRSKY frame received");
+                            mValidFRSKYPackets++;
+                        }
+                        makeText("FrskyHeader detected:"+mValidFRSKYPackets,mTextViewFRSKY);
+                        ret=parseLTM(message,p.getLength());
+                        if(ret!=0){
+                            //System.out.println("ltm frame received");
+                            mValidLTMPackets++;
+                        }
+                        makeText("LTMHeader detected:"+mValidLTMPackets,mTextViewLTM);
                     }
                 } catch (IOException e) {
-                    makeToast("couldn't receive any bytes on 5001");
+                    exceptionC2++;
+                    if(exceptionC2>2){
+                        makeToast("couldn't receive any bytes on 5001");
+                        exceptionC2 =0;
+                    }
                 }
             }
 
@@ -237,10 +272,86 @@ public class TestActivity extends AppCompatActivity {
 
     }
 
-    /*static{
+    private class TestThread3 extends Thread{
+        //long number_received_bytes=0;
+        DatagramPacket p=null;
+        DatagramSocket s=null;
+        byte[] message = new byte[1024];
+        //int mValidFRSKYPackets=0;
+        //int mValidLTMPackets=0;
+        int exceptionC2 =0;
+
+        public TestThread3(){
+        }
+        public void interrupt(){
+            running=false;
+            if(s != null){
+                s.close();
+            }
+        }
+        public void run(){
+            running=true;
+            makeToast("Opening udp port 5002");
+            p = new DatagramPacket(message, message.length);
+            try {
+                s = new DatagramSocket(5002);
+                s.setSoTimeout(3000);
+            } catch (SocketException e) {e.printStackTrace();}
+            if(s==null){makeToast("Couldn't open port 5002");return;}
+            makeToast("Port opened. Trying to receive data(5002)");
+            while (running==true && s != null) {
+                try {
+                    s.receive(p);
+                    if(p.getLength()>0){
+                        number_received_bytes+=p.getLength();
+                        makeText("" +number_received_bytes + " bytes received(OSD,5001&5002)",mTextView4);
+                        int ret=parseFRSKY(message,p.getLength());
+                        if(ret!=0){
+                            //System.out.println("FRSKY frame received");
+                            mValidFRSKYPackets++;
+                        }
+                        makeText("FrskyHeader detected:"+mValidFRSKYPackets,mTextViewFRSKY);
+                        ret=parseLTM(message,p.getLength());
+                        if(ret!=0){
+                            //System.out.println("ltm frame received");
+                            mValidLTMPackets++;
+                        }
+                        makeText("LTMHeader detected:"+mValidLTMPackets,mTextViewLTM);
+                    }
+                } catch (IOException e) {
+                    exceptionC2++;
+                    if(exceptionC2>2){
+                        makeToast("couldn't receive any bytes on 5002");
+                        exceptionC2 =0;
+                    }
+                }
+            }
+
+        }
+
+        private void makeToast(final String message){
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(mContext,message,Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        private void makeText(final String message, final TextView textView){
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    textView.setText(message);
+                }
+            });
+        }
+
+    }
+
+    static{
         System.loadLibrary("parser");
     }
-    public static native void parseLTM(byte[] b,int length);
-    public static native void parseFRSKY(byte[] b,int length);*/
+    public static native int parseLTM(byte[] b,int length);
+    public static native int parseFRSKY(byte[] b,int length);
 
 }

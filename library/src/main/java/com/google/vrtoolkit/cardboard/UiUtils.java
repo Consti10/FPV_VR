@@ -47,13 +47,14 @@ class UiUtils {
                     context.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://google.com/cardboard/cfg?vrtoolkit_version=0.5.1")));
                 }
                 catch (ActivityNotFoundException e) {
-                    Toast.makeText(context.getApplicationContext(), (CharSequence)"No browser to open website.", 1).show();
+                    Toast.makeText(context.getApplicationContext(), (CharSequence)"No browser to open website.", Toast.LENGTH_LONG).show();
                 }
             }
         };
         final FragmentManager fragmentManager = ((Activity)context).getFragmentManager();
-        final DialogFragment dialog = new SettingsDialogFragment((DialogStrings)new InstallDialogStrings(), listener);
-        dialog.show(fragmentManager, "InstallCardboardDialog");
+        //Fuck gradle
+        //final DialogFragment dialog = new SettingsDialogFragment((DialogStrings)new InstallDialogStrings(), listener);
+        //dialog.show(fragmentManager, "InstallCardboardDialog");
     }
     
     private static void showConfigureDialog(final Context context, final Intent intent) {
@@ -67,9 +68,10 @@ class UiUtils {
                 }
             }
         };
-        final FragmentManager fragmentManager = ((Activity)context).getFragmentManager();
+        //Fuck Gradle
+        /*final FragmentManager fragmentManager = ((Activity)context).getFragmentManager();
         final DialogFragment dialog = new SettingsDialogFragment((DialogStrings)new ConfigureDialogStrings(), listener);
-        dialog.show(fragmentManager, "ConfigureCardboardDialog");
+        dialog.show(fragmentManager, "ConfigureCardboardDialog");*/
     }
     
     private static class DialogStrings {
@@ -99,7 +101,7 @@ class UiUtils {
         }
     }
     
-    private static class SettingsDialogFragment extends DialogFragment {
+    /*public static class SettingsDialogFragment extends DialogFragment {
         private DialogStrings mDialogStrings;
         private DialogInterface.OnClickListener mPositiveButtonListener;
         
@@ -108,11 +110,11 @@ class UiUtils {
             this.mDialogStrings = dialogStrings;
             this.mPositiveButtonListener = positiveButtonListener;
         }
-        
+
         public Dialog onCreateDialog(final Bundle savedInstanceState) {
             final AlertDialog.Builder builder = new AlertDialog.Builder((Context)this.getActivity());
             builder.setTitle((CharSequence)this.mDialogStrings.mTitle).setMessage((CharSequence)this.mDialogStrings.mMessage).setPositiveButton((CharSequence)this.mDialogStrings.mPositiveButtonText, this.mPositiveButtonListener).setNegativeButton((CharSequence)this.mDialogStrings.mNegativeButtonText, (DialogInterface.OnClickListener)null);
             return (Dialog)builder.create();
         }
-    }
+    }*/
 }

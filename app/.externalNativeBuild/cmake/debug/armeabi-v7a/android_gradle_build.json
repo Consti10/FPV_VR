@@ -11,6 +11,24 @@
 	],
 	"libraries" : 
 	{
+		"VsyncHelperNative-Debug-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "VsyncHelperNative",
+			"buildCommand" : "C:\\Users\\Constantin\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build \"C:\\Users\\Constantin\\Desktop\\Android Studio Projects\\FPV_VR\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a\" --target VsyncHelperNative",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-arm -DVsyncHelperNative_EXPORTS -I..\\..\\..\\..\\src\\main\\c-ndk -I..\\..\\..\\..\\src\\main\\c-ndk\\package2  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/src/main/c-ndk/package2/VsyncHelperNative.c",
+					"workingDirectory" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				}
+			],
+			"output" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libVsyncHelperNative.so",
+			"toolchain" : "2207939819"
+		},
 		"parser-Debug-armeabi-v7a" : 
 		{
 			"abi" : "armeabi-v7a",
@@ -21,12 +39,30 @@
 			[
 				
 				{
-					"flags" : "  -target armv7-none-linux-androideabi -gcc-toolchain C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-arm -Dparser_EXPORTS -I..\\..\\..\\..\\src\\main\\c-ndk  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-arm -Dparser_EXPORTS -I..\\..\\..\\..\\src\\main\\c-ndk -I..\\..\\..\\..\\src\\main\\c-ndk\\package2  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
 					"src" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/src/main/c-ndk/parser.c",
 					"workingDirectory" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/.externalNativeBuild/cmake/debug/armeabi-v7a"
 				}
 			],
 			"output" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libparser.so",
+			"toolchain" : "2207939819"
+		},
+		"qcom-Debug-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "qcom",
+			"buildCommand" : "C:\\Users\\Constantin\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build \"C:\\Users\\Constantin\\Desktop\\Android Studio Projects\\FPV_VR\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a\" --target qcom",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi --gcc-toolchain=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/Constantin/AppData/Local/Android/sdk/ndk-bundle/platforms/android-21/arch-arm -Dqcom_EXPORTS -I..\\..\\..\\..\\src\\main\\c-ndk -I..\\..\\..\\..\\src\\main\\c-ndk\\package2  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/src/main/c-ndk/qcom.c",
+					"workingDirectory" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/.externalNativeBuild/cmake/debug/armeabi-v7a"
+				}
+			],
+			"output" : "C:/Users/Constantin/Desktop/Android Studio Projects/FPV_VR/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libqcom.so",
 			"toolchain" : "2207939819"
 		}
 	},

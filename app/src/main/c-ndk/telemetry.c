@@ -17,7 +17,7 @@
 void telemetry_init(telemetry_data_t *td) {
     td->voltage = 0;
     td->ampere = 0;
-    td->altitude = 20;
+    td->altitude = 0;
     td->baro_altitude=0;
     td->longitude =0;
     td->latitude =0;
@@ -34,7 +34,11 @@ void telemetry_init(telemetry_data_t *td) {
 	td->sats = 0;
 	td->fix = 0;
     //end
-    td->rssi = 0; //only from wifibroadcast receiver
+    td->rssi = 0; //only from rc copter receiver
+    td->WBrssi=0;  //for wifibraodcast video stream receiver
+
+    //mavlink
+    td->heading=0;
 }
 
 

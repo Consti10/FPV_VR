@@ -8,156 +8,317 @@
         <PreferenceScreen
             android:title="OpenGL Settings"
             android:summary="Settings specific for OpenGL ( Player and OSD )" >
+            <PreferenceScreen
+                android:title="Performance Hacks"
+                android:summary="Maximize OpenGL Performance">
+                <SwitchPreference
+                    android:key="FBR"
+                    android:title="Enable/disable FBR by default"
+                    android:summary="If your Phone has Android 7 and a QCOMM Chipset, the app in default uses a VR technique
+called Front Buffer Rendering to reduce Latency. But because FBR has multiple requirements on Chipset and Phone, it might not even
+work on some Phones that meet the requirements mentioned before. If you have visual artefacts or overheeting with FBR enabled,
+you can here disable it manually"
+                    android:defaultValue="false" />
+                <PreferenceCategory
+                    android:title="Settings to reduce lag on older smarthones (FBR not supported)">
+                    <SwitchPreference
+                        android:key="swapIntervallZero"
+                        android:title="swapIntervallZero"
+                        android:summary="Android's GLSurfaceView default 'waits' until a second frame is created,before it swaps the frame and backBuffer.
+                 This unnecessary creates a latency of 1 frame; Setting the swapIntervall eliminates this on my Hardware,but it may cause Tearing on
+                 other Hardware; default:false, because it causes a problem on s6 5.1.1 devices. If your OpenGL activity works with swap intervall zero enabled,
+                 activate it"
+                        android:defaultValue="false" />
+                    <SwitchPreference
+                        android:title="presentationTime"
+                        android:key="presentationTime"
+                        android:summary="Experimental ! Using EGLExt.eglPresentationTimeANDROID();"
+                        android:defaultValue="true" />
+                    <SwitchPreference
+                        android:key="clearFramebuffer"
+                        android:title="clearFramebuffer"
+                        android:summary="disabling can result in less latency, but some gpu's will draw weird without (especially Adreno==Qualcom); if you have a mali gpu, maybe disable clearFramebuffer"
+                        android:defaultValue="true" />
+                    <SwitchPreference
+                        android:key="externalTextureDoubleBuffering"
+                        android:title="externalTextureDoubleBuffering"
+                        android:summary="experimental to enable, recommended off"
+                        android:defaultValue="false" />
+                </PreferenceCategory>
+            </PreferenceScreen>
+
+            <PreferenceScreen
+                android:title="Stereo and VR Rendering"
+                android:summary="Settings for Stereo Rendering/VR Rendering">
+                <EditTextPreference
+                    android:key="interpupillaryDistance"
+                    android:inputType="numberDecimal"
+                    android:title="interpupillaryDistance"
+                    android:defaultValue="0.2"
+                    android:summary="Set to zero when you don't want to have an 3D Effect;for each Person different, but a default value of 0.2
+                seems to be optimal"/>
+                <EditTextPreference
+                    android:key="tesselationFactor"
+                    android:inputType="numberDecimal"
+                    android:title="tesselationFactor"
+                    android:defaultValue="1.0"
+                    android:summary="Select the level of Tesselation in your scene. Tesselation is only needed when enabling vertex displacement distortion correction. In this case the tesselation has to be high enough,but not too high ( a tesselation of 10 adds 10*10 more triangles).
+                however,modern smartphones can render milions of vertices without performance drop. Default:1, when diss. corr. enabled:min. 20"/>
+                <SwitchPreference
+                    android:key="distortionCorrection"
+                    android:title="distortionCorrection"
+                    android:summary="enables/disables distortion correction."
+                    android:defaultValue="true" />
+                <ListPreference
+                    android:title="VR Headset"
+                    android:key="headset"
+                    android:summary="Select your VR Headset for distortion correction parameters. If you can't find your headset,
+use 'manually' and google your k1,k2 distortion factors"
+                    android:entries="@array/listentries3"
+                    android:entryValues="@array/listvalues3"
+                    android:defaultValue="CV2"/>
+                <EditTextPreference
+                    android:key="k1"
+                    android:inputType="numberDecimal"
+                    android:title="k1 (distortionFactor 1 if you select 'Manually'' for your Headset)"
+                    android:defaultValue="0.15"/>
+                <EditTextPreference
+                    android:key="k2"
+                    android:inputType="numberDecimal"
+                    android:title="k2 (distortionFactor 2 if you select 'Manually'' for your Headset)"
+                    android:defaultValue="0.15"/>
+                <EditTextPreference
+                    android:key="viewportScale"
+                    android:inputType="numberDecimal"
+                    android:title="viewportScale"
+                    android:defaultValue="1.0"
+                    android:summary="Select the size of your viewport. default:1.0f, select a smaler value if you can't see the whole scene with your
+                fpv googles; however,it is recommended to use  a larger videoDistance instead to use as many Pixels as possible"/>
+            </PreferenceScreen>
             <EditTextPreference
                 android:key="videoFormat"
                 android:inputType="numberDecimal"
                 android:title="Video Format"
                 android:defaultValue="1.3333"
                 android:summary="F.e 720p: 1280mal720 => 1280/720=1.77777"/>
-            <SwitchPreference
-                android:key="enable_stereo_renderer"
-                android:title="enable stereo rendering (side by side)"
-                android:defaultValue="true" />
             <EditTextPreference
                 android:key="videoDistance"
                 android:inputType="numberDecimal"
                 android:title="videoDistance"
                 android:defaultValue="5.7"
                 android:summary="Select the position of the 'video canvas' in front of your head; default:5.7f,you can select values between 2 and 14.9"/>
-            <EditTextPreference
-                android:key="interpupillaryDistance"
-                android:inputType="numberDecimal"
-                android:title="interpupillaryDistance"
-                android:defaultValue="0.2"
-                android:summary="Set to zero when you don't want to have an 3D Effect;for each Person different, but a default value of 0.2
-                seems to be optimal"/>
-            <EditTextPreference
-            android:key="viewportScale"
-            android:inputType="numberDecimal"
-            android:title="viewportScale"
-            android:defaultValue="1.0"
-            android:summary="Select the size of your viewport. default:1.0f, select a smaler value if you can't see the whole scene with your
-                fpv googles"/>
-            <EditTextPreference
-                android:key="tesselationFactor"
-                android:inputType="numberDecimal"
-                android:title="tesselation"
-                android:defaultValue="1.0"
-                android:summary="Select the level of Tesselation in your scene. Tesselation is only needed when enabling vertex displacement distortion
-                correction. In this case the tesselation has to be high enough,but not too high ( a tesselation of 10 adds 10*10 more triangles).
-                however,modern smartphones can render milions of vertices without performance drop. Default:1, when diss. corr. enabled:min. 20"/>
-            <SwitchPreference
-                android:key="distortionCorrection"
-                android:title="distortionCorrection"
-                android:summary="enables/disables distortion correction. experimental."
-                android:defaultValue="true" />
-            <SwitchPreference
-                android:key="swapIntervallZero"
-                android:title="swapIntervallZero"
-                android:summary="Android's GLSurfaceView default 'waits' until a second frame is created,before it swaps the frame and backBuffer.
-                 This unnecessary creates a latency of 1 frame; Setting the swapIntervall eliminates this on my Hardware,but it may cause Tearing on
-                 other Hardware; default:true"
-                android:defaultValue="true" />
-            <SwitchPreference
-                android:key="unlimitedOGLFps"
-                android:title="Unlimited Opengl FPS"
-                android:summary="Experimental ! Using EGLExt.eglPresentationTimeANDROID();default: false,because for my Hardware it seems like to have
-                 no difference"
-                android:defaultValue="false" />
-            <SwitchPreference
-                android:key="headTracking"
-                android:title="Head Tracking"
-                android:summary="Select Head Tracking on/off; TODO: calibrate ?"
-                android:defaultValue="false" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="OSD Settings"
+            android:summary="Settings specific for your OSD. OSD Overlay only works with OpenGL Activity." >
             <SwitchPreference
                 android:key="osd"
                 android:title="OSD"
                 android:summary="Select OSD on/off"
                 android:defaultValue="true" />
-            <PreferenceCategory
-                android:title="OSD specific Settings" >
+            <EditTextPreference
+                android:key="modelDistance"
+                android:inputType="numberDecimal"
+                android:title="modelDistance"
+                android:defaultValue="3.0"
+                android:summary="Select the position of the 'Kopter model' in front of your head; default:3.0f,you can select values between 2 and 14.9"/>
+            <SwitchPreference
+                android:key="OSDOnTopOfVideo"
+                android:title="Fonts onTop Video"
+                android:summary="select whether you want to draw the fonts on Top of the video for maximum pixel usage or slightly on Top/below the Video"
+                android:defaultValue="false" />
+            <SwitchPreference
+                android:key="LTM"
+                android:title="Parsing LTM"
+                android:summary="Parse received LTM (Light-Telemetry) data"
+                android:defaultValue="false" />
+            <EditTextPreference
+                android:key="LTMPort"
+                android:title="LTMPort"
+                android:defaultValue="5001"
+                android:inputType="numberSigned"
+                android:summary="UDP Port to listen for LTM data;default:5001" />
+            <SwitchPreference
+                android:key="FRSKY"
+                android:title="Parsing FRSKY"
+                android:summary="Parse received FRSKY data"
+                android:defaultValue="false" />
+            <EditTextPreference
+                android:key="FRSKYPort"
+                android:title="FRSKYPort"
+                android:defaultValue="5002"
+                android:inputType="numberSigned"
+                android:summary="UDP Port to listen for FRSKY data;default:5002" />
+            <SwitchPreference
+                android:key="RSSI"
+                android:title="RSSI"
+                android:summary="Receive RSSI raw hex values"
+                android:defaultValue="false" />
+            <EditTextPreference
+                android:key="RSSIPort"
+                android:title="RSSIPort"
+                android:defaultValue="5003"
+                android:inputType="numberSigned"
+                android:summary="UDP Port to listen for RSSI hex values;default:5003" />
+
+            <SwitchPreference
+                android:key="MAVLINK"
+                android:title="MAVLINK"
+                android:summary="Parse received MAVLINK data"
+                android:defaultValue="false" />
+            <EditTextPreference
+                android:key="MAVLINKPort"
+                android:title="MAVLINKPort"
+                android:defaultValue="5004"
+                android:inputType="numberSigned"
+                android:summary="UDP Port to listen for MAVLINK data;default:5004" />
+
+
+            <SwitchPreference
+                android:key="invert_yaw"
+                android:title="invert_yaw"
+                android:summary=""
+                android:defaultValue="false" />
+            <SwitchPreference
+                android:key="invert_roll"
+                android:title="invert_roll"
+                android:summary=""
+                android:defaultValue="false" />
+            <SwitchPreference
+                android:key="invert_pitch"
+                android:title="invert_pitch"
+                android:summary=""
+                android:defaultValue="false" />
+            <SwitchPreference
+                android:key="enable_model"
+                android:title="enable_model"
+                android:summary="OSD model (x,y,z achsis)"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_yaw"
+                android:title="enable_yaw"
+                android:summary="OSD model yaw"
+                android:defaultValue="false" />
+            <SwitchPreference
+                android:key="enable_roll"
+                android:title="enable_roll"
+                android:summary="OSD model roll"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_pitch"
+                android:title="enable_pitch"
+                android:summary="OSD model pitch"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_home_arrow"
+                android:title="enable_home_arrow"
+                android:summary="Home Arrow"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_battery_life"
+                android:title="enable_battery_life"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_latitude_longitude"
+                android:title="enable_latitude_longitude"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_height"
+                android:title="enable_height"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_voltage"
+                android:title="enable_voltage"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_ampere"
+                android:title="enable_ampere"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_speed"
+                android:title="enable_speed"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_rssi"
+                android:title="enable_rssi"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_distance"
+                android:title="enable_distance"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_x3"
+                android:title="enable_x3"
+                android:defaultValue="true" />
+            <SwitchPreference
+                android:key="enable_x4"
+                android:title="enable_x4"
+                android:defaultValue="true" />
+            <PreferenceScreen
+                android:title="Battery Info"
+                android:summary="Info about your LiPo Battery. Needed for Batt%">
                 <EditTextPreference
-                    android:key="modelDistance"
+                    android:key="CELLS"
                     android:inputType="numberDecimal"
-                    android:title="modelDistance"
-                    android:defaultValue="3.0"
-                    android:summary="Select the position of the 'Kopter model' in front of your head; default:3.0f,you can select values between 2 and 14.9"/>
+                    android:title="CELLS"
+                    android:defaultValue="3.0" />
+                <EditTextPreference
+                    android:key="CELL_MIN"
+                    android:inputType="numberDecimal"
+                    android:title="CELL_MIN"
+                    android:defaultValue="3.2" />
+                <EditTextPreference
+                    android:key="CELL_MAX"
+                    android:inputType="numberDecimal"
+                    android:title="CELL_MAX"
+                    android:defaultValue="4.2" />
+            </PreferenceScreen>
+            <PreferenceScreen
+                android:title="GPS Home"
+                android:summary="Set your home Lattitude,Longitude (and Attitude). Needed for HomeArrow and HomeDistance">
                 <SwitchPreference
-                    android:key="ltm"
-                    android:title="Parsing LTM"
-                    android:summary="Parse received LTM (Light-Telemetry) data"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="frsky"
-                    android:title="Parsing FRSKY"
-                    android:summary="Parse received FRSKY data"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="invert_yaw"
-                    android:title="invert_yaw"
-                    android:summary=""
+                    android:key="enable_auto_home"
+                    android:title="enable_auto_home"
+                    android:summary="use your Phone's GPS to set Home. Latt.,Lon. und Att."
                     android:defaultValue="false" />
-                <SwitchPreference
-                    android:key="invert_roll"
-                    android:title="invert_roll"
-                    android:summary=""
-                    android:defaultValue="false" />
-                <SwitchPreference
-                    android:key="invert_pitch"
-                    android:title="invert_pitch"
-                    android:summary=""
-                    android:defaultValue="false" />
-                <SwitchPreference
-                    android:key="enable_model"
-                    android:title="enable_model"
-                    android:summary="OSD model (x,y,z achsis)"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="enable_home_arrow"
-                    android:title="enable_home_arrow"
-                    android:summary="Home Arrow"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="enable_battery_life"
-                    android:title="enable_battery_life"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="enable_lattitude_longitude"
-                    android:title="enable_lattitude_longitude"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="enable_height"
-                    android:title="enable_height"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="enable_voltage"
-                    android:title="enable_voltage"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="enable_ampere"
-                    android:title="enable_ampere"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="enable_speed"
-                    android:title="enable_speed"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="enable_rssi"
-                    android:title="enable_rssi"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="enable_x2"
-                    android:title="enable_x2"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="enable_x3"
-                    android:title="enable_x3"
-                    android:defaultValue="true" />
-                <SwitchPreference
-                    android:key="enable_x4"
-                    android:title="enable_x4"
-                    android:defaultValue="true" />
-            </PreferenceCategory>
+                <PreferenceCategory
+                    android:title="manual Home Lat,Lon,Att. Only needed when auto_home is disabled">
+                    <EditTextPreference
+                        android:key="HOME_LAT"
+                        android:title="HOME_LAT"
+                        android:summary="Set you home Lat. in Degree"
+                        android:inputType="numberDecimal"
+                        android:defaultValue="0" />
+                    <EditTextPreference
+                        android:key="HOME_LON"
+                        android:title="HOME_LON"
+                        android:summary="Set you home Lon. in Degree"
+                        android:inputType="numberDecimal"
+                        android:defaultValue="0" />
+                    <EditTextPreference
+                        android:key="HOME_ATT"
+                        android:title="HOME_ATT"
+                        android:summary="Set you home Att. in metre"
+                        android:inputType="numberDecimal"
+                        android:defaultValue="10" />
+                </PreferenceCategory>
+            </PreferenceScreen>
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:title="HeadTracking settings"
+            android:summary="Configure HeadTracking. Only works with OpenGL Activity">
+            <SwitchPreference
+                android:key="VRWorldTracking"
+                android:title="VRWorld Tracking"
+                android:summary="Select Head Tracking inside your Ground VR World on/off; For calibration you have to install and start once Google Cardboard from Android App Store"
+                android:defaultValue="false" />
+            <SwitchPreference
+                android:key="CameraGimbalTracking"
+                android:title="Camera Gimbal Tracking"
+                android:summary="For use with bidirectional link. Transmit your head Position to your fpv device, when the Camera is mounted to a CameraGimbal. Can't be used simultaneously with VRWorldTracking. For calibration you have to install and start once Google Cardboard from Android App Store"
+                android:defaultValue="false" />
 
         </PreferenceScreen>
 
@@ -186,7 +347,14 @@
                 android:key="decoder"
                 android:summary="Select your Decoder"
                 android:entries="@array/listentries2"
-                android:entryValues="@array/listvalues2" />
+                android:entryValues="@array/listvalues2"
+                android:defaultValue="HW"/>
+            <SwitchPreference
+                android:key="formatRPI"
+                android:title="formatRPI"
+                android:summary="Feed the decoder at the beginning with extracted rpi camera nalu framesn(csd-0,csd-1). needed especially by adreno gpu's"
+                android:defaultValue="true" />
+
 
         </PreferenceScreen>
 
@@ -206,6 +374,11 @@
             android:title="File name2"
             android:summary="select your raw h.264 file name (located in your internal Storage) for Ground Recording"
             android:defaultValue="mGroundRecording.h264" />
+        <!--
+        <Preference
+            android:key="FolderPointer"
+            android:title="FPV_VR_GroundRecordings"
+            android:summary="View your ground recordings folder" /> -->
 
     </PreferenceCategory>
 
@@ -228,7 +401,7 @@
             android:key="debugFile"
             android:title="Debug file"
             android:summary="shows any exceptions if thrown and userDebug enabled"
-            android:defaultValue="" />
+            android:defaultValue=" " />
 
     </PreferenceCategory>
 

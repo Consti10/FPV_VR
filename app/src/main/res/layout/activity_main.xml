@@ -10,53 +10,71 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.constantin.wilson.FPV_VR.MainActivity">
 
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start SurfaceView Player"
-        android:id="@+id/button"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:textSize="16dp"
-        android:width="100000dp" />
+        android:layout_alignParentStart="true">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start TextureView Player"
-        android:id="@+id/button2"
-        android:layout_below="@+id/button"
-        android:layout_alignParentStart="true"
-        android:textSize="16dp"
-        android:width="1000dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start OpenGL Player (Side by Side)"
-        android:id="@+id/button3"
-        android:layout_below="@+id/button2"
-        android:layout_alignParentStart="true"
-        android:textSize="16dp"
-        android:width="1000dp" />
+            <Button
+                android:text="Start VideoStram Only"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button1"
+                android:layout_weight="0.06" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Settings"
-        android:id="@+id/button4"
-        android:layout_below="@+id/button5"
-        android:layout_alignParentStart="true" />
+            <Switch
+                android:text="TextureView/SurfaceView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/switch1"
+                android:layout_weight="0.06" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test Activity"
-        android:id="@+id/button5"
-        android:layout_below="@+id/button3"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        </LinearLayout>
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:text="Start OpenGL Player Mono OSD" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="Start OpenGL Player Stereo (OSD,VR)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button3"
+                android:layout_weight="1" />
+
+            <Switch
+                android:text="FrontBuffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/switch2"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Button
+            android:text="Connection Test Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button4" />
+
+        <Button
+            android:text="Settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button5" />
+
+    </LinearLayout>
 </RelativeLayout>

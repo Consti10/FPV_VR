@@ -29,8 +29,8 @@ public class HeadTracker implements SensorEventListener {
     private final Vector3d mLatestAcc;
     
     public static HeadTracker createFromContext(final Context context) {
-        final SensorManager sensorManager = (SensorManager)context.getSystemService("sensor");
-        final Display display = ((WindowManager)context.getSystemService("window")).getDefaultDisplay();
+        final SensorManager sensorManager = (SensorManager)context.getSystemService(Context.SENSOR_SERVICE);
+        final Display display = ((WindowManager)context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
         return new HeadTracker(new DeviceSensorLooper(sensorManager), new SystemClock(), display);
     }
     

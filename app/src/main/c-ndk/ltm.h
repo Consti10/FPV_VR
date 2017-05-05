@@ -8,7 +8,7 @@
 
 #include "telemetry.h"
 
-void ltm_read(telemetry_data_t *td, uint8_t *buf, int buflen);
+int ltm_read(telemetry_data_t *td, uint8_t *buf, int buflen);
 void ltm_check(telemetry_data_t *td);
 
 #define LIGHTTELEMETRY_START1 0x24 //$

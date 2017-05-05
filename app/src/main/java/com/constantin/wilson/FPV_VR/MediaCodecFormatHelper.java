@@ -3,24 +3,27 @@ package com.constantin.wilson.FPV_VR;
 
 import java.nio.ByteBuffer;
 
+/*Helper for LowLag Decoder*/
 public class MediaCodecFormatHelper {
 
     public MediaCodecFormatHelper(){
 
     }
 
-    public static ByteBuffer getCsd0(){
+    public static ByteBuffer getRpiCsd0(){
         byte[] csd0={0,0,0,1,39,66,-128,40,-107,-96,60,6,127,-110,1,-30,68,-44};
         ByteBuffer BBcsd0=ByteBuffer.wrap(csd0);
         return BBcsd0;
     }
 
 
-    public static ByteBuffer getCsd1(){
+    public static ByteBuffer getRpiCsd1(){
         byte[] csd1={0,0,0,1,40,-50,2,92,-128};
         ByteBuffer BBcsd1=ByteBuffer.wrap(csd1);
         return BBcsd1;
     }
+
+
 
 
     /*TESTINGS SPECIFIC FOR RASPBERRY PI CAMERA OUTPUT

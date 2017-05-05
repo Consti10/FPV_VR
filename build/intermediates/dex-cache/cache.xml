@@ -2,94 +2,31 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\exploded-aar\FPV_VR\library\unspecified\jars\libs\libprotobuf-java-2.3-nano.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
         optimize="true"
-        revision="24.0.2"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f5a92195a82d45e28592c738395fb80116996a48\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\library\build\intermediates\bundles\default\libs\libprotobuf-java-2.3-nano.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
         sha1="ac2e8b80ab8545b61640b175168cd76e6bd5a3b4">
-        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\pre-dexed\debug\libprotobuf-java-2.3-nano_af25713d41f82cf63410c57af5a2cd487e6df020.jar" />
+        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\transforms\dex\debug\folders\1000\8\libprotobuf-java-2.3-nano_ff84c32fec7dd63b812cd962086be8edfbac2c50\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\exploded-aar\FPV_VR\library\unspecified\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
         optimize="true"
-        revision="24.0.2"
-        sha1="0937770786de992307ee7c4a43886c14b9ef7957">
-        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\pre-dexed\debug\FPV_VR-library-unspecified_a19cb324c4cda55fec92669b1af7be4ae1290882.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_7d6eb68ff332f8c518e5d7fcf310421f56c4b20d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_88fa547798105a1e5bfecc1e4376bb009dc4399b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
-        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.1.0_4e92a4a38a4459140b34348a90c48262a5e1b8f1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
-        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.1.0_257e576a6d5b04f127bb3be80de22a5f1e392a54.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_c7722f5381e9130c018d281cb1d3ad9140b07976.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Constantin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1_dab8e5c88ce44c7a44c7201bbfd298ddfa169dc1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.1.1_2f6fb1c3ee217eb88dbd5c54072575f0d13db56d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_2fff5b4cc1794b61f76d40586146c0b66156ea78.jar" />
+        revision="25.0.0"
+        sha1="afa1b4762d9720a1715f974d62a39b9ddba5ab47">
+        <dex dex="C:\Users\Constantin\Desktop\Android Studio Projects\FPV_VR\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_38a69567973656f399c9627ac18c17829e346a61\classes.dex" />
     </item>
 
 </items>
