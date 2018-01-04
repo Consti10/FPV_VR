@@ -1,6 +1,6 @@
 # FPV_VR
 
-FPV_VR
+This branch is deprecated. You can find the newest version in FPV_VR_2018
 
 How it works:
 This Android app can receive a fpv video stream, decode it with ultra low latency and display it ether in a single window, side by side, or side by side in VR mode. 
