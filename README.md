@@ -1,6 +1,6 @@
 # FPV_VR
 
-This branch is deprecated. You can find the newest version in FPV_VR_2018
+This branch is deprecated. You can find the newest version in FPV_VR_2018 \
 https://github.com/Consti10/FPV_VR_2018
 
 How it works:
